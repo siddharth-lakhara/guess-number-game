@@ -3,5 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="numberGenerator" class="org.lakhara.NumberGeneratorImpl" />
+
+    <bean id="numberGeneratorId" class="org.lakhara.NumberGeneratorImpl" />
+
+    <bean id="game" class="org.lakhara.GameImpl">
+<!--        Following is config for constructor based DI -->
+<!--        <constructor-arg ref="numberGeneratorId" />-->
+        <property name="numberGenerator" ref="numberGeneratorId" />
+    </bean>
+
 </beans>
