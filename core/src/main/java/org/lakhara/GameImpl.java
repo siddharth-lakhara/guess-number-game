@@ -3,6 +3,9 @@ package org.lakhara;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class GameImpl implements Game {
     private static final Logger logger = LoggerFactory.getLogger(GameImpl.class);
 
@@ -24,6 +27,7 @@ public class GameImpl implements Game {
         this.numberGenerator = numberGenerator;
     }
 
+    @PostConstruct
     @Override
     public void reset() {
         this.smallest = 0;
@@ -32,6 +36,11 @@ public class GameImpl implements Game {
         this.biggest = this.numberGenerator.getMaxNumber();
         this.number = this.numberGenerator.next();
         logger.debug("Number is {}", number);
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        logger.info("in game destroy property");
     }
 
     @Override

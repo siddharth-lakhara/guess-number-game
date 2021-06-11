@@ -6,10 +6,13 @@
 
     <bean id="numberGeneratorId" class="org.lakhara.NumberGeneratorImpl" />
 
-    <bean id="game" class="org.lakhara.GameImpl">
+<!--    init-method="reset" to call game.reset() during init -->
+    <bean id="game" class="org.lakhara.GameImpl" >
 <!--        Following is config for constructor based DI -->
 <!--        <constructor-arg ref="numberGeneratorId" />-->
         <property name="numberGenerator" ref="numberGeneratorId" />
     </bean>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
 </beans>
