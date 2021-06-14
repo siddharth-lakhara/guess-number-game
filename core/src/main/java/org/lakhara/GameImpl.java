@@ -22,16 +22,6 @@ public class GameImpl implements Game {
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
-//    Example of constructor based DI:
-//    public GameImpl(NumberGenerator numberGenerator) {
-//        this.numberGenerator = numberGenerator;
-//    }
-
-//    Commented out as this became obsolete with Autowiring
-//    public void setNumberGenerator(NumberGenerator numberGenerator) {
-//        this.numberGenerator = numberGenerator;
-//    }
-
     @PostConstruct
     @Override
     public void reset() {
