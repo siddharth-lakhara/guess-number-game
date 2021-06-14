@@ -7,12 +7,15 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config />
+<!--    Enable annotations -->
+<!--    <context:annotation-config />-->
+
+    <context:component-scan base-package="org.lakhara" />
 
     <bean id="numberGeneratorId" class="org.lakhara.NumberGeneratorImpl" />
 
 <!--    init-method="reset" to call game.reset() during init -->
-    <bean id="game" class="org.lakhara.GameImpl" >
+    <bean id="Game" class="org.lakhara.GameImpl" >
 <!--        Following is config for constructor based DI -->
 <!--        <constructor-arg ref="numberGeneratorId" />-->
 
