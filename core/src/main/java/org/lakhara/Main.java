@@ -20,7 +20,7 @@ public class Main {
 
 //        Get number generator bean context container
         NumberGenerator numberGenerator
-                = context.getBean("numberGeneratorId", NumberGeneratorImpl.class);
+                = context.getBean(NumberGenerator.class);
 
         int number = numberGenerator.next();
 
