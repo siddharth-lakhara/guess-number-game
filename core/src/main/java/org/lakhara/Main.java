@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
@@ -25,9 +24,10 @@ public class Main {
 
         logger.info("number = {}", number);
 
-//        Get game bean context container
-        Game game = context.getBean(Game.class);
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
 
+        logger.info("getMainMessage = {}", messageGenerator.getMainMessage());
+        logger.info("getResultMessage = {}", messageGenerator.getResultMessage());
 
 //        Close context container
         context.close();
