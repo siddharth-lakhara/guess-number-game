@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component("Game")
 public class GameImpl implements Game {
     private static final Logger logger = LoggerFactory.getLogger(GameImpl.class);
 
