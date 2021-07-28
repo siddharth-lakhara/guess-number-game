@@ -1,5 +1,8 @@
-package org.lakhara;
+package org.lakhara.console;
 
+import org.lakhara.AppConfig;
+import org.lakhara.MessageGenerator;
+import org.lakhara.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -34,3 +37,4 @@ public class Main {
 
     }
 }
+
