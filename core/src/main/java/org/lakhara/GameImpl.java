@@ -29,7 +29,6 @@ public class GameImpl implements Game {
         this.remainingGuesses = this.guessCount;
         this.biggest = this.numberGenerator.getMaxNumber();
         this.number = this.numberGenerator.next();
-        logger.debug("Number is {}", number);
     }
 
     @PreDestroy

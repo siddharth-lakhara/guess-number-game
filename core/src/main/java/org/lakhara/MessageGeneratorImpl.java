@@ -39,7 +39,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
                 direction = "Higher";
             }
             return "Go " + direction + "! You have " +
-                    game.getRemainingGuesses() + "guess left";
+                    game.getRemainingGuesses() + " guess left";
         }
     }
 }
