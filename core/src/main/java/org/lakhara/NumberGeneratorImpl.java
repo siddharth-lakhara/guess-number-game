@@ -1,12 +1,14 @@
 package org.lakhara;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Random;
 
 public class NumberGeneratorImpl implements NumberGenerator {
     private final Random random = new Random();
-    private int maxNumber = 100;
+
+    @Autowired
+    private int maxNumber;
 
     @Override
     public int next() {

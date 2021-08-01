@@ -1,6 +1,6 @@
 package org.lakhara.console;
 
-import org.lakhara.AppConfig;
+import org.lakhara.config.AppConfig;
 import org.lakhara.MessageGenerator;
 import org.lakhara.NumberGenerator;
 import org.slf4j.Logger;

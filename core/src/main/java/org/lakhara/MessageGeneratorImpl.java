@@ -11,7 +11,6 @@ public class MessageGeneratorImpl implements MessageGenerator {
 
     @Autowired
     private Game game;
-    private int guessCount = 10;
 
     @PostConstruct
     public void initNotifier() {
@@ -31,7 +30,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
             return "You guessed it! The number was " + game.getNumber();
         } else if (game.isGameLost()) {
             return "You lost! The number was " + game.getNumber();
-        } else if (game.getRemainingGuesses() == guessCount) {
+        } else if (game.getRemainingGuesses() == game.getGuessCount()) {
             return "What is your first guess?";
         } else {
             String direction = "Lower";
@@ -39,7 +38,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
                 direction = "Higher";
             }
             return "Go " + direction + "! You have " +
-                    game.getRemainingGuesses() + " guess left";
+                    game.getRemainingGuesses() + " guesses left";
         }
     }
 }
